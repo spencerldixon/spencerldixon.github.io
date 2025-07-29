@@ -30,7 +30,7 @@ twitter_username: spencerldixon
 github_username:  spencerldixon
 
 # Build settings
-theme: minima
+# theme: 
 plugins:
   - jekyll-feed
   - jekyll-postcss-v2
