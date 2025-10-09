@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highlight.js Tokyo Night (dark) from jsDelivr / highlight.js CDN -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLMJ5YC4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLLMJ5YC4K');
+</script>
+
+  </head>
+
+  <body class="bg-slate-50 text-base-content min-h-screen p-6">
+    <div class="flex justify-between items-center w-full">
+  <a href="http://localhost:4000" class="flex-1">
+    <img class="w-12 h-12 rounded-full" src="/assets/images/headshot.jpg" />
+  </a>
+
+  <div class="hidden sm:flex w-fit justify-center items-center bg-slate-200 p-2 rounded-full font-semibold">
+    <a href="/" class="hover:bg-slate-300 py-2 px-4 rounded-full">Home</a>
+    <a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="hover:bg-slate-300 py-2 px-4 rounded-full">Resume</a>
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="hover:bg-slate-300 py-2 px-4 rounded-full">Contact</a>
+  </div>
+
+  <div class="hidden sm:flex gap-4 flex-1 justify-end">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-xl fa-envelope"></i>
+    </a>
+
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-xl fa-rss"></i>
+    </a>
+  </div>
+
+  <label class="block sm:hidden relative z-40 cursor-pointer px-3 py-6 flex-1 flex justify-end" for="mobile-menu">
+    <input class="peer hidden" type="checkbox" id="mobile-menu" />
+    <div
+        class="relative z-50 block h-[2px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"
+        >
+    </div>
+      <div
+          class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block"
+          >
+          &nbsp;
+      </div>
+        <div
+            class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
+            >
+            <div class="float-right min-h-full w-[80%] bg-slate-50 px-8 pt-24 shadow-2xl">
+              <menu class="flex flex-col gap-4 text-xl">
+                <li><a href="/" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Home</a></li>
+                <li><a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Resume</a></li>
+                <li><a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Contact</a></li>
+              </menu>
+            </div>
+        </div>
+  </label>
+</div>
+
+
+    <main class="container mx-auto">
+      <div class="max-w-screen-md mx-auto mt-24">
+  <div class="flex flex-col gap-2 sm:mt-12 mb-12">
+    <h1 class="text-6xl text-primary tracking-tight mb-4">Building a Neural Network with Tensorflow</h1>
+    <time class="">07 Nov 2017</time>
+  </div>
+
+  <article class="mx-auto prose lg:prose-xl text-base-content">
+    <p>In my last post we explored the nuts and bolts of how neural networks work by building a simplified neural net using nothing but numpy and Python.</p>
+
+<p>We’ll build a neural network with Tensorflow and teach it to be able to classify images of hand written numbers from 0-9 using the MNIST dataset.</p>
+
+<p><a href="https://www.youtube.com/watch?v=AJsOA4Zl6Io"><img src="https://img.youtube.com/vi/AJsOA4Zl6Io/0.jpg" alt="&quot;It's technology...&quot;" /></a></p>
+
+<p>We’ll start by importing Tensorflow and downloading our dataset which is included in Tensorflow for us…</p>
+
+<h2 id="our-dataset">Our dataset</h2>
+
+<pre><code class="language-python">import tensorflow as tf
+
+# Download the mnist dataset and load it into our mnist variable, we'll use one hot encoding...
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+</code></pre>
+
+<p>We’ll use one hot encoding which means we’ll convert classifications to a combination of 0’s and 1’s to represent our classification. For example, we could say that True becomes <code>[0,1]</code>, and False becomes <code>[1,0]</code>, or Cat becomes <code>[1,0,0]</code>, while Dog and Mouse become <code>[0,1,0]</code> and <code>[0,0,1]</code> respectively.</p>
+
+<p>In our dataset, the position of the 1 will reflect which number it is from 0-9. For example <code>[0,0,0,1,0,0,0,0,0,0]</code> would represent 3 as it is in the third position (counting from 0).</p>
+
+<p>Our <code>mnist</code> variable will hold the MNIST data which is split into three parts for us:</p>
+
+<ul>
+  <li>Train (55,000 data points of training data accessible via <code>mnist.train</code>)</li>
+  <li>Test (10,000 points of test data accessible via <code>mnist.test</code>)</li>
+  <li>Validation (5,000 points of validation data accessible via <code>mnist.validation</code>)</li>
+</ul>
+
+<p>Train/Test/Validation splits are very important in machine learning. They allow us to keep back a portion of data to test the performance of our model on data it hasn’t seen before for a more reliable accuracy rating. The validation split we won’t use here, but this is usually reserved as a dataset with which to compare the performance of different models, or the same model with different parameters in order to find the best performing model.</p>
+
+<p>Let’s take a look at our data…</p>
+
+<p><img src="/assets/images/building_a_neural_network_with_tensorflow/mnist.png" alt="A single handwritten digit from MNIST as an array of numbers representing pixel colour" /></p>
+
+<h2 id="forward-propagation">Forward Propagation</h2>
+
+<p>Tensorflow works by having you define a computation graph for your data to flow through. You can think of this as like a flow chart; data comes in at the top, and each step we perform an operation and pass it to the next step. Once we’ve defined this in Tensorflow, we can then run it as a session. Tensorflow is great at being able to spread this out across GPUs and other devices for faster processing too should we need it.</p>
+
+<p>As we need to define the computation graph beforehand, we need to create Placeholders which are special variables in Tensorflow that accept incoming data. They’re the gateways to putting data into our neural network. We’ll need two, one to input our dataset of images, and one to input the correct labels. The placeholder for our dataset of images will become the input neurons at the front of our neural network…</p>
+
+<pre><code class="language-python"># We'll input this when we ask TF to run, that's why it's called a placeholder
+# These will be our input into the NN
+# None means we can input as many as we want, 748 is the flattened array of our 28x28 image.
+
+inputs = tf.placeholder(tf.float32, [None, 784]) # Our flattened array of a 28x28 image
+labels = tf.placeholder(tf.float32, [None, 10]) # Our label (one hot encoded)
+</code></pre>
+
+<p>Next, we’ll define and initialise our weights and biases…</p>
+
+<pre><code class="language-python"># Initialise our weights and bias for our input layer to our hidden layer...
+# Our input layer has 784 neurons! That's one per pixel in our flattened array of our image.
+W1 = tf.Variable(tf.random_normal([784, 300], stddev=0.03), name='W1')
+b1 = tf.Variable(tf.zeros(300), name='b1')
+
+# And the weights connecting the hidden layer to the output layer...
+# We pass our 784 input neurons to a hidden layer of 300 neurons, and then an output of 10 neurons (for our 0-9 classification)
+W2 = tf.Variable(tf.random_normal([300, 10], stddev=0.03), name='W2')
+b2 = tf.Variable(tf.zeros(10), name='b2')
+</code></pre>
+
+<p>Biases are just like another set of neurons to give us a little more variance to tune in our network. Just like before, we’ll pass our inputs through the first layer, multiplying our weights and adding a bias. Then we’ll apply an activation function. This time we’ll use a RELU activation function instead of the sigmoid we used previously (RELU’s are the trendy activation function right now). Our final prediction will be activated using a softmax function which will convert our prediction to between 0 - 1 for our output.</p>
+
+<pre><code class="language-python">hidden_out           = tf.add(tf.matmul(inputs, W1), b1)
+hidden_out_activated = tf.nn.relu(hidden_out)
+
+output              = tf.add(tf.matmul(hidden_out_activated, W2), b2)
+predictions         = tf.nn.softmax(output)
+</code></pre>
+
+<h2 id="backpropagation">Backpropagation</h2>
+
+<p>We’ll define our cost function next, this is where things start to get a little easier by using Tensorflow. As Tensorflow has gone through our forward prop, it automatically knows how to do backprop! We just have to define which cost function we’ll be using and how we want to minimise it.</p>
+
+<pre><code class="language-python">cross_entropy = tf.reduce_mean(-tf.reduce_sum(labels * tf.log(predictions), reduction_indices=[1]))
+</code></pre>
+
+<p>We’ll need to define our hyperparameters. Hyperparameters are like the tuning knobs of neural network, they’re various parameters that control things like how fast our network will learn and end up affecting the final accuracy of our network. They’re called hyperparameters as they’re the parameters that affect how our network learns its parameters (the optimal weights and biases).</p>
+
+<pre><code class="language-python">learning_rate = 0.5
+epochs        = 1000
+batch_size    = 100
+</code></pre>
+
+<p>Instead of calculating the gradients ourselves like last time, Tensorflow let’s us just specify which way we’ll be optimising our algorithm. We’ll use Gradient Descent like last time, although there are other options available to us which do the same minimizing of a cost function in different ways. We’ll specify gradient descent as the way we’re optimising, and then give it the cost function we want to minimise using gradient descent.</p>
+
+<pre><code class="language-python">optimiser = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cross_entropy)
+</code></pre>
+
+<h2 id="training">Training</h2>
+
+<p>We have to initialise the variables we defined in Tensorflow. We’ll also come up with a way to accurately measure how if our prediction was correct…</p>
+
+<pre><code class="language-python">init = tf.global_variables_initializer()
+
+# Define an accuracy assessment operation
+correct_prediction = tf.equal(tf.argmax(labels, 1), tf.argmax(predictions, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+</code></pre>
+
+<p>Finally we can run our Tensorflow session and train our network. After our training loops, we’ll pass in the unseen test dataset to see how well our network did.</p>
+
+<pre><code class="language-python">with tf.Session() as sess:
+    sess.run(init)
+
+    for epoch in range(epochs):
+        batch_xs, batch_ys = mnist.train.next_batch(100)
+        sess.run(optimiser, feed_dict={inputs: batch_xs, labels: batch_ys})
+
+    print(sess.run(accuracy, feed_dict={inputs: mnist.test.images, labels: mnist.test.labels}))
+</code></pre>
+
+<pre><code class="language-python">0.9682
+</code></pre>
+
+<p>A 0.9682% accuracy isn’t awful for our first network! But this can be improved quite easily. Try tuning the network above to see how you can increase performance. You may want to try tweaking the hyperparameters, changing the activation functions or optimiser. The best algorithms can get over 99% accuracy on this task!</p>
+
+
+  </article>
+
+  <div role="alert" class="mt-24 mb-12 alert alert-error alert-dash alert-vertical sm:alert-horizontal">
+  👍
+  <div>
+    <h3 class="font-bold">Thanks for reading</h3>
+    <p class="">You can follow me here for my latest thoughts and projects</p>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="https://github.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-github fa-xl"></i>
+    </a>
+
+    <a href="https://twitter.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-x-twitter fa-xl"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/spencerldixon" target="_blank">
+      <i class="fa-brands fa-linkedin fa-xl"></i>
+    </a>
+
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-envelope fa-xl"></i>
+    </a>
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-rss fa-xl"></i>
+    </a>
+  </div>
+</div>
+
+
+
+
+</div>
+
+    </main>
+
+    <!-- Highlight.js core -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+    // Auto-detect & highlight all <pre><code class="language-..."> blocks
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (window.hljs) { hljs.highlightAll(); }
+    });
+    </script>
+  </body>
+</html>

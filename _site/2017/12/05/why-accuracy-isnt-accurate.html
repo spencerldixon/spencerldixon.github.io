@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highlight.js Tokyo Night (dark) from jsDelivr / highlight.js CDN -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLMJ5YC4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLLMJ5YC4K');
+</script>
+
+  </head>
+
+  <body class="bg-slate-50 text-base-content min-h-screen p-6">
+    <div class="flex justify-between items-center w-full">
+  <a href="http://localhost:4000" class="flex-1">
+    <img class="w-12 h-12 rounded-full" src="/assets/images/headshot.jpg" />
+  </a>
+
+  <div class="hidden sm:flex w-fit justify-center items-center bg-slate-200 p-2 rounded-full font-semibold">
+    <a href="/" class="hover:bg-slate-300 py-2 px-4 rounded-full">Home</a>
+    <a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="hover:bg-slate-300 py-2 px-4 rounded-full">Resume</a>
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="hover:bg-slate-300 py-2 px-4 rounded-full">Contact</a>
+  </div>
+
+  <div class="hidden sm:flex gap-4 flex-1 justify-end">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-xl fa-envelope"></i>
+    </a>
+
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-xl fa-rss"></i>
+    </a>
+  </div>
+
+  <label class="block sm:hidden relative z-40 cursor-pointer px-3 py-6 flex-1 flex justify-end" for="mobile-menu">
+    <input class="peer hidden" type="checkbox" id="mobile-menu" />
+    <div
+        class="relative z-50 block h-[2px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"
+        >
+    </div>
+      <div
+          class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block"
+          >
+          &nbsp;
+      </div>
+        <div
+            class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
+            >
+            <div class="float-right min-h-full w-[80%] bg-slate-50 px-8 pt-24 shadow-2xl">
+              <menu class="flex flex-col gap-4 text-xl">
+                <li><a href="/" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Home</a></li>
+                <li><a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Resume</a></li>
+                <li><a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Contact</a></li>
+              </menu>
+            </div>
+        </div>
+  </label>
+</div>
+
+
+    <main class="container mx-auto">
+      <div class="max-w-screen-md mx-auto mt-24">
+  <div class="flex flex-col gap-2 sm:mt-12 mb-12">
+    <h1 class="text-6xl text-primary tracking-tight mb-4">Why accuracy isn't accurate</h1>
+    <time class="">05 Dec 2017</time>
+  </div>
+
+  <article class="mx-auto prose lg:prose-xl text-base-content">
+    <p>When it comes to measuring how well our machine learning models do, there’s one metric we tend to reach for first; accuracy.</p>
+
+<p>Accuracy can be thought of as the percentage of correct guesses out of our total number of things we’re guessing…</p>
+
+<pre><code class="language-python">total_things = 100
+correct_guesses = 70
+
+accuracy_percentage = (correct_guesses / total_guesses) * 100
+# Our accuracy is 70%
+</code></pre>
+
+<p>But there’s a huge blind spot with accuracy as a single metric. Accuracy alone just looks at our correct guesses, but what if those were just chance? What if we had a classifier that just randomly guessed and as a result, it guessed 70 of our 100 examples correctly.</p>
+
+<h2 id="precision-vs-recall">Precision vs Recall</h2>
+
+<p>We need to be skeptical about accuracy, and our correct guesses on their own. If we were looking at images of cats and dogs and classifying them, how many of the images we guessed were cats, turned out to actually be cats? Did we miss any images that could’ve been classified as cats but weren’t?</p>
+
+<p>Although these two questions sound similar, take a minute to think them through and understand the difference…</p>
+
+<ul>
+  <li>How many classification attempts were actually correct? (Precision)</li>
+  <li>How much of the dataset did we classify correctly? (Recall)</li>
+</ul>
+
+<p>These metrics are known as <em>Precision</em> and <em>Recall</em> and give us a better look at the performance of our model than just accuracy alone.</p>
+
+<p>To understand these better we need to understand the four possible states our binary guess can be in…</p>
+
+<ul>
+  <li>True Positives (TP): the number of positive examples, labeled correctly as positive.</li>
+  <li>False Positives (FP): the number of negative examples, labeled incorrecly as positive.</li>
+  <li>True Negatives (TN): the number of negative examples, labeled correctly as negative.</li>
+  <li>False Negatives (FN): the number of positive examples, labeled incorrectly as negative.</li>
+</ul>
+
+<h2 id="f1-score">F1 Score</h2>
+
+<p>Now our model has three metrics; accuracy, precision and recall. Which one do we optimise for? Do we sacrifice precision, if we can improve recall? Guessing just a single cat picture correctly would give us a high precision (because we can demonstrate that out of all the guesses we make, we’re very precise in classifying correctly), but we would have a terrible recall (because we’ve only classified one image out of our dataset).</p>
+
+<p>Luckily we can combine precision and recall into a single score to find the best of both worlds. We’ll take the harmonic mean of the two scores (We use the harmonic mean as that’s best for rates and ratios). The harmonic mean calculates the average of the two scores but it also takes into account how similar the two values are. This is called the F1 score…</p>
+
+<pre><code class="language-python">precision = 0.84
+recall = 0.72
+
+f1_score = 2 * (precision * recall) / (precision + recall)
+
+# Our F1 Score is 0.775
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<p>Accuracy alone is a bad metric to measure our predictions by. It leaves out vital context like how many did we guess correctly by chance? How many were mislabelled and how much of the dataset did we actually predict correctly? This is where precision and recall can help us. As we may want to make a trade off between precision and recall to get a better and more balanced model, we can use the F1 score to tell us which model is better.</p>
+
+
+  </article>
+
+  <div role="alert" class="mt-24 mb-12 alert alert-error alert-dash alert-vertical sm:alert-horizontal">
+  👍
+  <div>
+    <h3 class="font-bold">Thanks for reading</h3>
+    <p class="">You can follow me here for my latest thoughts and projects</p>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="https://github.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-github fa-xl"></i>
+    </a>
+
+    <a href="https://twitter.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-x-twitter fa-xl"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/spencerldixon" target="_blank">
+      <i class="fa-brands fa-linkedin fa-xl"></i>
+    </a>
+
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-envelope fa-xl"></i>
+    </a>
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-rss fa-xl"></i>
+    </a>
+  </div>
+</div>
+
+
+
+
+</div>
+
+    </main>
+
+    <!-- Highlight.js core -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+    // Auto-detect & highlight all <pre><code class="language-..."> blocks
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (window.hljs) { hljs.highlightAll(); }
+    });
+    </script>
+  </body>
+</html>

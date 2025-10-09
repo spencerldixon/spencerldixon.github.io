@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highlight.js Tokyo Night (dark) from jsDelivr / highlight.js CDN -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLMJ5YC4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLLMJ5YC4K');
+</script>
+
+  </head>
+
+  <body class="bg-slate-50 text-base-content min-h-screen p-6">
+    <div class="flex justify-between items-center w-full">
+  <a href="http://localhost:4000" class="flex-1">
+    <img class="w-12 h-12 rounded-full" src="/assets/images/headshot.jpg" />
+  </a>
+
+  <div class="hidden sm:flex w-fit justify-center items-center bg-slate-200 p-2 rounded-full font-semibold">
+    <a href="/" class="hover:bg-slate-300 py-2 px-4 rounded-full">Home</a>
+    <a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="hover:bg-slate-300 py-2 px-4 rounded-full">Resume</a>
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="hover:bg-slate-300 py-2 px-4 rounded-full">Contact</a>
+  </div>
+
+  <div class="hidden sm:flex gap-4 flex-1 justify-end">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-xl fa-envelope"></i>
+    </a>
+
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-xl fa-rss"></i>
+    </a>
+  </div>
+
+  <label class="block sm:hidden relative z-40 cursor-pointer px-3 py-6 flex-1 flex justify-end" for="mobile-menu">
+    <input class="peer hidden" type="checkbox" id="mobile-menu" />
+    <div
+        class="relative z-50 block h-[2px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"
+        >
+    </div>
+      <div
+          class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block"
+          >
+          &nbsp;
+      </div>
+        <div
+            class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
+            >
+            <div class="float-right min-h-full w-[80%] bg-slate-50 px-8 pt-24 shadow-2xl">
+              <menu class="flex flex-col gap-4 text-xl">
+                <li><a href="/" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Home</a></li>
+                <li><a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Resume</a></li>
+                <li><a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Contact</a></li>
+              </menu>
+            </div>
+        </div>
+  </label>
+</div>
+
+
+    <main class="container mx-auto">
+      
+    </main>
+
+    <!-- Highlight.js core -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+    // Auto-detect & highlight all <pre><code class="language-..."> blocks
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (window.hljs) { hljs.highlightAll(); }
+    });
+    </script>
+  </body>
+</html>

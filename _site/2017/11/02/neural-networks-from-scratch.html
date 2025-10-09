@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highlight.js Tokyo Night (dark) from jsDelivr / highlight.js CDN -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLMJ5YC4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLLMJ5YC4K');
+</script>
+
+  </head>
+
+  <body class="bg-slate-50 text-base-content min-h-screen p-6">
+    <div class="flex justify-between items-center w-full">
+  <a href="http://localhost:4000" class="flex-1">
+    <img class="w-12 h-12 rounded-full" src="/assets/images/headshot.jpg" />
+  </a>
+
+  <div class="hidden sm:flex w-fit justify-center items-center bg-slate-200 p-2 rounded-full font-semibold">
+    <a href="/" class="hover:bg-slate-300 py-2 px-4 rounded-full">Home</a>
+    <a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="hover:bg-slate-300 py-2 px-4 rounded-full">Resume</a>
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="hover:bg-slate-300 py-2 px-4 rounded-full">Contact</a>
+  </div>
+
+  <div class="hidden sm:flex gap-4 flex-1 justify-end">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-xl fa-envelope"></i>
+    </a>
+
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-xl fa-rss"></i>
+    </a>
+  </div>
+
+  <label class="block sm:hidden relative z-40 cursor-pointer px-3 py-6 flex-1 flex justify-end" for="mobile-menu">
+    <input class="peer hidden" type="checkbox" id="mobile-menu" />
+    <div
+        class="relative z-50 block h-[2px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"
+        >
+    </div>
+      <div
+          class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block"
+          >
+          &nbsp;
+      </div>
+        <div
+            class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
+            >
+            <div class="float-right min-h-full w-[80%] bg-slate-50 px-8 pt-24 shadow-2xl">
+              <menu class="flex flex-col gap-4 text-xl">
+                <li><a href="/" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Home</a></li>
+                <li><a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Resume</a></li>
+                <li><a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Contact</a></li>
+              </menu>
+            </div>
+        </div>
+  </label>
+</div>
+
+
+    <main class="container mx-auto">
+      <div class="max-w-screen-md mx-auto mt-24">
+  <div class="flex flex-col gap-2 sm:mt-12 mb-12">
+    <h1 class="text-6xl text-primary tracking-tight mb-4">Neural Networks from Scratch</h1>
+    <time class="">02 Nov 2017</time>
+  </div>
+
+  <article class="mx-auto prose lg:prose-xl text-base-content">
+    <p>In this post we’ll take a dive into the maths behind neural networks and how they work by building our own neural network from scratch using Python.</p>
+
+<h2 id="wtf-is-a-neural-net">WTF is a neural net?</h2>
+
+<p>Our brains are full of billions and billions of neurons stacked together. They look a little something like this…</p>
+
+<p><img src="/assets/images/neural_networks_from_scratch/neuron.png" alt="A simple artificial neuron" /></p>
+
+<p>At their core, they’re just a cell that takes in some very basic electric signals, and decides wether to fire a signal to the next neuron or not based on the signals it receives. A single neuron on it’s own isn’t very useful, but when we start stacking lots of neurons together, and let each of them handle a tiny bit of information in the form of an electrical impulse, we get a brain, and it turns out brains are actually pretty good at complex stuff.</p>
+
+<p>In the 50s a bunch of researchers decided to take inspiration from the way the brain works and create an artificial neuron (this is what is in the diagram) that would take in a set of numbers, perform some kind of function (like adding them together for example) and then pass the result to the next neuron. We could even stack lots of neurons together to make a neural network just like the brain! This was a great idea, but in the 50’s, we didn’t have the computing power or the amount of data needed to make it work.</p>
+
+<p>Fast forward to today and neural nets are the new hotness of 2016/17 and sit at the heart of Netflix’s recommendation systems and Tesla’s autopilot.</p>
+
+<p><img src="/assets/images/neural_networks_from_scratch/neural_network.png" alt="Stacking Neurons together into a Neural Network" /></p>
+
+<h2 id="supervised-learning">Supervised learning</h2>
+
+<p>Neural networks are a supervised learning problem. This means they rely on supervision to learn, we have to actively train them by giving them a bunch of correctly labelled answers and letting it work out how we got to them.</p>
+
+<p>Imagine your job was to replicate a recipe for a cake. You likely wouldn’t know where to begin, but if you had a correct list of ingredients and the final cake to reference, you would just need to keep making cakes and tweaking your recipe until you were able to match the look and taste of your reference cake.</p>
+
+<h2 id="building-a-neural-network">Building a neural network</h2>
+
+<p>We’ll import our dependencies and fix our seed so that our random numbers are the same every time we run our code</p>
+
+<pre><code class="language-python">import numpy as np
+np.random.seed(1)
+</code></pre>
+
+<p>Neural networks have two stages that we need to code; forward propagation (which is just passing data through our network to make a prediction) and back propagation (which is the art of calculating how wrong our prediction was, and adjusting the weights to move us a little closer to a more correct prediction).</p>
+
+<p>We’ll start by creating a class for our neural net and initialising all our weights with a random starting point. We’ll save these in our instance for later use…</p>
+
+<pre><code class="language-python">class NeuralNetwork():
+    def __init__(self, input_layer_size, hidden_layer_size, hidden_layer_2_size, output_layer_size):
+        # Initialise the weights for inbetween each layer
+        self.w1 = np.random.randn(input_layer_size, hidden_layer_size)
+        self.w2 = np.random.randn(hidden_layer_size, hidden_layer_2_size)
+        self.w3 = np.random.randn(hidden_layer_2_size, output_layer_size)
+</code></pre>
+
+<p>We’ll add a few helper functions to our class to calculate the sigmoid of a given number, and the sigmoid derivative. These will come in handy later…</p>
+
+<pre><code class="language-python">    def __sigmoid(self, x):
+        return 1 / (1 + np.exp(-x))
+
+    def __sigmoid_prime(self, x):
+        # Calculates the derivative of our sigmoid function
+        return np.exp(-x) / ((1 + np.exp(-x)) ** 2)
+</code></pre>
+
+<h2 id="forward-propagation">Forward Propagation</h2>
+
+<p>We’ll multiply the inputs by the weights for the first layer, and apply a sigmoid activation function. Once we have this, we’ll repeat the process and multiply our result by the weights for the second layer, and apply our activation function. We’ll rinse and repeat until we get to the end of our network.</p>
+
+<pre><code class="language-python">    def forward_propagation(self, inputs):
+        # Z's are pre activation function, A's are post activation function
+
+        # Feed inputs to first hidden layer
+        self.z2 = np.dot(inputs, self.w1)
+        self.a2 = self.__sigmoid(self.z2)
+
+        # Feed first hidden layer to second hidden layer
+        self.z3 = np.dot(self.a2, self.w2)
+        self.a3 = self.__sigmoid(self.z3)
+
+        # Feed second hidden layer to output to generate prediction
+        self.z4 = np.dot(self.a3, self.w3)
+        prediction = self.__sigmoid(self.z4)
+
+        return prediction
+</code></pre>
+
+<h2 id="cost-function">Cost Function</h2>
+
+<p>Once we have our prediction, we now need to work out how bad we were. We can use a cost function to quantify exactly how bad our prediction was.</p>
+
+<p>One method of doing this is to take all the errors, square them, and get the average. This is called the Mean Squared Error (MSE). The goal of training our neural net then becomes to try to minimise this cost. The lower our error (given to us by the cost function), the better our predictions will be.</p>
+
+<p>Let’s add a helper function to our class to calculate our cost…</p>
+
+<pre><code class="language-python">    def __compute_cost(self, prediction, actual):
+        # Compute the Mean Squared Error of our inputs
+        # This gives us an overall averaged cost of how wrong our prediction was
+        return np.sum(0.5 * (actual - prediction) ** 2)
+</code></pre>
+
+<h2 id="backpropagation">Backpropagation</h2>
+
+<p>The weights in our neural net are our variables we can tweak that allows our network to generate good predictions. We want to find the best set of weights that result in the closest predictions. We work backwards from our prediction, back to our inputs to tweak these weights. This backwards pass through our network is called backpropagation or backprop.</p>
+
+<p>Wait. Why can’t we just check all of the possible weights? Well for a start all the weights need to work together, and as we add more, the difficulty grows exponentially. Imagine cracking a 4 digit pin number, there are 10^4 possibilities, that’s 10,000 different pin numbers. If we just add one more digit to our pin number, the possibilities jump to 100,000. That means our total combinations just shot up by 90,000! A six digit pin has 1,000,000 combinations! Going from 5 to 6 digits results in an extra 900,000 combinations! As we add more weights, our complexity and difficulty in brute forcing this grows exponentially.</p>
+
+<p>So how can we adjust our weights to reduce our cost function? What if we knew which direction to tweak our weights would result in reducing the cost function?  Well we could test the cost function of each side of our prediction to see which side is smaller, but that would be time intensive.</p>
+
+<p>Maths to the rescue! We can use the partial derivative which says “What is the rate of change of our cost function (J) with respect to W?”</p>
+
+<p>Calculating the partial derivative will give us a positive value for our cost increasing, and a negative value for it decreasing.</p>
+
+<pre><code class="language-python">    def backpropagation(self, inputs, labels, predictions):
+        delta4 = np.multiply(-(labels - predictions), self.__sigmoid_prime(self.z4))
+        dJdW3  = np.dot(self.a3.T, delta4)
+
+        delta3 = np.dot(delta4, self.w3.T) * self.__sigmoid_prime(self.z3)
+        dJdW2  = np.dot(self.a2.T, delta3)
+
+        delta2 = np.dot(delta3, self.w2.T) * self.__sigmoid_prime(self.z2)
+        dJdW1  = np.dot(inputs.T, delta2)
+
+        return dJdW1, dJdW2, dJdW3
+</code></pre>
+
+<p>We’ll iteratively take tiny steps downhill by calculating our cost, seeing which way to move, and shaving a tiny preset number which is called our learning rate, off our weights, and then running the cost function again, using our derivative to see which way to move, and taking another tiny step. The learning rate can be thought of as the size of the step we’re taking. Take too bigger step and we might miss the lowest error and bounce back up. Take too smaller step and our network will take forever to train.</p>
+
+<p><img src="/assets/images/neural_networks_from_scratch/gradient_descent.png" alt="Gradient Descent" /></p>
+
+<p>We’ll iterate with tiny steps until our error stops reducing and lands in lowest point of error, or local minima.
+This process is called gradient descent and it is everywhere in machine learning.</p>
+
+<h2 id="training">Training</h2>
+
+<p>Once we have our gradients, we’ll need to update our network to take a small step towards reducing our cost. We’ll do this multiple times by exposing our dataset to our neural network for 5000 iterations, called epochs in machine learning.</p>
+
+<pre><code class="language-python">    def train(self, input_data, labels, epochs, learning_rate):
+        for iteration in range(epochs):
+
+            # Step 1. Forward prop to get our predictions...
+            predictions = self.forward_propagation(input_data)
+
+            # Step 2. We'll print the cost to see how well we did
+            print("Current cost:", self.__compute_cost(predictions, labels))
+
+            # Step 3. Backprop to get our gradients (with which we'll update our weights)
+            dJdW1, dJdW2, dJdW3 = self.backpropagation(input_data, labels, predictions)
+
+            # Step 4. Update our weights
+            # If we add our dJdW (our gradient), we'll increase our cost, and if we subtract it, we'll reduce it
+            # We'll set our weights to themselves, minus a tiny amount in the direction of our gradient
+            # (this is where we use a learning rate to take a tiny amount of the gradient)
+
+            self.w1 = self.w1 - (learning_rate * dJdW1)
+            self.w2 = self.w2 - (learning_rate * dJdW2)
+            self.w3 = self.w3 - (learning_rate * dJdW3)
+</code></pre>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>Let’s create a dataset and its corresponding correct labels</p>
+
+<pre><code class="language-python">input_data = np.array([[0,0,1], [1,1,1], [1,0,1], [0,1,1]])
+labels     = np.array([[0,1,1,0]]).T
+</code></pre>
+
+<p>We’ll initialise a new neural net with 3 input nodes (our data is an array with 3 elements, so each one needs its own input node), 4 nodes in the first hidden layer, 5 in the second hidden layer, and 1 output…</p>
+
+<pre><code class="language-python">net = NeuralNetwork(3,4,5,1)
+net.train(data, labels, 5000, 0.1)
+</code></pre>
+
+<p>Running our code we can see how our cost decreases over time…</p>
+
+<pre><code>Cost at epoch 0: 0.688239103472
+Cost at epoch 1000: 0.0192991528354
+Cost at epoch 2000: 0.00398719767284
+Cost at epoch 3000: 0.00202819194556
+Cost at epoch 4000: 0.00132494673741
+</code></pre>
+
+<p>Let’s see how well our network learned to predict our test set. We can just run <code>net.forward_propagation(data)</code> to predict new data on our trained network…</p>
+
+<pre><code class="language-python">print("Predictions...\n", net.forward_propagation(input_data))
+print("Actual...\n", labels)
+
+[[ 0.02039406]
+ [ 0.96795662]
+ [ 0.97199464]
+ [ 0.02758648]]
+[[0]
+ [1]
+ [1]
+ [0]]
+</code></pre>
+
+<p>Not bad!</p>
+
+
+  </article>
+
+  <div role="alert" class="mt-24 mb-12 alert alert-error alert-dash alert-vertical sm:alert-horizontal">
+  👍
+  <div>
+    <h3 class="font-bold">Thanks for reading</h3>
+    <p class="">You can follow me here for my latest thoughts and projects</p>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="https://github.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-github fa-xl"></i>
+    </a>
+
+    <a href="https://twitter.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-x-twitter fa-xl"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/spencerldixon" target="_blank">
+      <i class="fa-brands fa-linkedin fa-xl"></i>
+    </a>
+
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-envelope fa-xl"></i>
+    </a>
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-rss fa-xl"></i>
+    </a>
+  </div>
+</div>
+
+
+
+
+</div>
+
+    </main>
+
+    <!-- Highlight.js core -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+    // Auto-detect & highlight all <pre><code class="language-..."> blocks
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (window.hljs) { hljs.highlightAll(); }
+    });
+    </script>
+  </body>
+</html>

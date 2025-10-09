@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highlight.js Tokyo Night (dark) from jsDelivr / highlight.js CDN -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/tokyo-night-dark.min.css">
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLMJ5YC4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLLMJ5YC4K');
+</script>
+
+  </head>
+
+  <body class="bg-slate-50 text-base-content min-h-screen p-6">
+    <div class="flex justify-between items-center w-full">
+  <a href="http://localhost:4000" class="flex-1">
+    <img class="w-12 h-12 rounded-full" src="/assets/images/headshot.jpg" />
+  </a>
+
+  <div class="hidden sm:flex w-fit justify-center items-center bg-slate-200 p-2 rounded-full font-semibold">
+    <a href="/" class="hover:bg-slate-300 py-2 px-4 rounded-full">Home</a>
+    <a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="hover:bg-slate-300 py-2 px-4 rounded-full">Resume</a>
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="hover:bg-slate-300 py-2 px-4 rounded-full">Contact</a>
+  </div>
+
+  <div class="hidden sm:flex gap-4 flex-1 justify-end">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-xl fa-envelope"></i>
+    </a>
+
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-xl fa-rss"></i>
+    </a>
+  </div>
+
+  <label class="block sm:hidden relative z-40 cursor-pointer px-3 py-6 flex-1 flex justify-end" for="mobile-menu">
+    <input class="peer hidden" type="checkbox" id="mobile-menu" />
+    <div
+        class="relative z-50 block h-[2px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"
+        >
+    </div>
+      <div
+          class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block"
+          >
+          &nbsp;
+      </div>
+        <div
+            class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
+            >
+            <div class="float-right min-h-full w-[80%] bg-slate-50 px-8 pt-24 shadow-2xl">
+              <menu class="flex flex-col gap-4 text-xl">
+                <li><a href="/" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Home</a></li>
+                <li><a href="https://drive.google.com/file/d/10v_i5GDWsbjHuOF4qq_nvTrEcAoZPUfY/view?usp=sharing" target="_blank" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Resume</a></li>
+                <li><a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" class="flex rounded-full py-2 px-6 hover:bg-slate-200">Contact</a></li>
+              </menu>
+            </div>
+        </div>
+  </label>
+</div>
+
+
+    <main class="container mx-auto">
+      <div class="max-w-screen-md mx-auto mt-24">
+  <div class="flex flex-col gap-2 sm:mt-12 mb-12">
+    <h1 class="text-6xl text-primary tracking-tight mb-4">De-spaghettifying Rails Apps with Wisper</h1>
+    <time class="">16 Mar 2022</time>
+  </div>
+
+  <article class="mx-auto prose lg:prose-xl text-base-content">
+    <p>Let’s say we have a Rails application that users can sign up to, and we want to add a feature to send new users a welcome email on registration. Where should we put that logic?</p>
+
+<h2 id="option-1-the-controller">Option 1: The controller</h2>
+
+<p>We could put it inside our call to create the user in the user registration controller.</p>
+
+<p>Something like this…</p>
+
+<pre><code class="language-ruby">class Registrations
+	def create
+		user = User.new(user_params)
+
+		if user.save?
+			# Send the welcome email if a user is saved successfully
+			UserMailer.with(user: resource).welcome_email.deliver_later
+			redirect_to root_path, notice: "Signed up!"
+		else
+			redirect_to root_path, notice: "Could not create account"
+		end
+	end
+end
+</code></pre>
+
+<p>I’d argue that putting this logic in the controller is fine for small things, but it’s not the best solution.</p>
+
+<p>If our app starts to grow and we need to do more things like store a “sign up event” to our database, or send a notification to slack to say we’ve acquired a new user, then our controller starts to bloat pretty quickly with a lot of non-registration related logic.</p>
+
+<h2 id="option-2-callbacks">Option #2: Callbacks</h2>
+
+<p>We could use an <code>after_create</code> callback in our User model, but I like this even less. Creating users in the console for test purposes would fire off an unwanted welcome email, and we’re coupling mailer code tightly to our model.</p>
+
+<p>Shoehorning these things into the controller feels messy, and they don’t feel at home in our models either.</p>
+
+<p>So what’s the solution?</p>
+
+<h2 id="option-3-pubsub-style-events-with-wisper">Option #3: Pub/Sub style events with Wisper</h2>
+
+<p>Wisper is a minimalist ruby library that allows us to broadcast events, and listen for them somewhere else in our codebase.</p>
+
+<p>Wisper gives us a simple pattern for dealing with this problem by decoupling code and just passing messages around instead.</p>
+
+<p>Whenever something happens that we want to care about, like the creation of a new user, we’ll send out a <code>:user_created</code> event and have a listener somewhere else that picks up these events, and sends the mailer.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Let’s start by installing wisper in our gemfile…</p>
+
+<pre><code class="language-ruby">gem 'wisper'
+</code></pre>
+
+<h2 id="events">Events</h2>
+
+<p>Wisper usually passes around raw data, but I prefer to create classes for specific events. Let’s create an event for our user creation. I tend to put these in <code>app/lib/events</code> or <code>app/models/events</code>.</p>
+
+<pre><code class="language-ruby">class Events::UserCreated
+	attr_reader :user
+
+	def initializer(user:)
+		@user = user
+	end
+end
+</code></pre>
+
+<h2 id="broadcasting-an-event">Broadcasting an Event</h2>
+
+<p>To broadcast an event, we need to include <code>Wisper::Publisher</code> in the code we want to broadcast from. We’re broadcasting from the model, but we can use the same include to broadcast from a controller or anywhere else.</p>
+
+<pre><code class="language-ruby">class User &lt; ApplicationRecord
+	include Wisper::Publisher
+
+	has_one :address
+
+	after_create :broadcast_user_created_event
+
+	private
+
+	def broadcast_user_created_event
+		broadcast(:user_created, Events::UserCreated.new(user: self))
+	end
+end
+</code></pre>
+
+<p>Wisper’s <code>broadcast</code> method takes two arguments, the first is the event name as a symbol, the second is the payload. This could be a hash, string or any bit of data, but this is where using classes for events really pays off.</p>
+
+<h2 id="listening-and-responding-to-events">Listening and Responding to Events</h2>
+
+<p>Once we’ve got our events, we’ll need to create a Listener to respond to them. I like to put listeners in <code>app/lib/listeners</code> (more about naming conventions later)</p>
+
+<pre><code class="language-ruby">class Listeners::UserListener
+  def on_user_created(event)
+		UserMailer.with(user: event.user).welcome_email.deliver_late
+  end
+end
+</code></pre>
+
+<p>Our listener should define methods with the same name as the event name. In this case, our event is called <code>:user_created</code>, so we should define a method called <code>on_user_created</code> that accept a single argument; the event payload we passed in to our <code>broadcast</code> method.</p>
+
+<p>“Wait where does <code>on_</code> come from?”</p>
+
+<p>Good question. It’s a stylistic choice, you don’t have to have the prefix, but I prefer it. It happens when you subscribe your listener, which we’ll cover next…</p>
+
+<h2 id="subscribe-your-listener-to-events">Subscribe your Listener to Events</h2>
+
+<p>Our Listener doesn’t automatically pick up events unfortunately, we need to subscribe our listener. We’ll do this in an initializer file…</p>
+
+<pre><code class="language-ruby">Rails.application.config.to_prepare do
+  # Wisper subscribers need to be refreshed here when we are in
+  # dev/test. This is due to code-reloading, which could re-subscribe
+  # existing handlers, leading to duplicates and errors
+  Wisper.clear if Rails.env.development? || Rails.env.test?
+
+  # Subscribe your listeners here, use prefix: :on to get event names like on_fund_created in the listener
+  Wisper.subscribe(Listeners::FundListener.new, prefix: :on)
+end
+</code></pre>
+
+<p>Here we’re setting the <code>prefix: :on</code> option, which changes the incoming method in our listener from <code>user_created</code> to <code>on_user_created</code>. This is a matter of preference, but I think it reads nicer with prefixes enabled.</p>
+
+<h2 id="done">Done!</h2>
+
+<p>Your new events bus is now wired up and ready to go! Creating a user should now emit an event that gets picked up by your listener and fires off a welcome email.</p>
+
+<p>It’s a little setup, but the reward for decoupling this code pays off, especially when you start dealing with a few different events.</p>
+
+<h2 id="some-useful-conventions">Some useful conventions</h2>
+
+<p>Here’s some conventions I’ve found useful to help to keep events stuff organised. I tend to document these in the project README too for other developers to follow.</p>
+
+<p>I like to use classes with keyword arguments for events to give them a defined and documented structure. You can also use Structs or Dry Struct to further enforce events to have required attributes and formats.</p>
+
+<p>I create two folders to house all my wisper stuff; <code>app/lib/events/</code> to house my event classes, and <code>app/lib/listeners/</code> to house the corresponding listeners. (Although you could move events to <code>models/events/</code> if you needed to persist some to the database)</p>
+
+<p>I name events <code>Events::ThingVerb</code>, where <code>Thing</code> is usually the model name, and <code>Verb</code> is the past tense action that’s happening to it (created, updated, committed, etc), but feel free to adopt a convention that makes sense for your app, and then document it in your README.</p>
+
+<p>This is what my file structure looks like:</p>
+
+<pre><code class="language-ruby">/app
+	/lib
+		/events
+			user_created.rb
+			user_updated.rb
+		/listeners
+			user_listener.rb
+		/publishers
+			events_publisher.rb
+</code></pre>
+
+<p>When subscribing a listener, I prefer using the <code>prefix: :on</code> option, so that events arrive at my listener with the naming convention <code>on_user_created</code>. I think it reads a bit better than the raw event name.</p>
+
+<p>When using callbacks like <code>after_save</code>, I like to hand these off to a method with the convention <code>broadcast_event_name_event</code>, for example: <code>broadcast_user_created_event</code>. This helps create a consistent naming between my events, listeners, and anything calling them.</p>
+
+<h2 id="publishers-for-easier-calling">Publishers for easier calling</h2>
+
+<p>“But passing in the event name as a symbol and the event object to <code>broadcast</code> feels like duplicating effort, can’t we just pass the event on its own?”</p>
+
+<p>Yes! I’ve been using a pattern that allows us to just broadcast the event object itself.</p>
+
+<pre><code class="language-ruby">module Publishers
+  module EventPublisher
+    include Wisper::Publisher
+    extend self
+
+    alias_method :wisper_broadcast, :broadcast
+
+    def broadcast(event)
+      wisper_broadcast(symbolize_event(event), event)
+    end
+
+    def symbolize_event(event)
+      event.class.name.demodulize.underscore.to_sym
+    end
+  end
+end
+</code></pre>
+
+<p>Instead of adding <code>include Wisper::Publisher</code> in the file you want to broadcast from, you can now use <code>include Publishers::EventPublisher</code> instead, and broadcast your events like this:</p>
+
+<pre><code class="language-ruby">broadcast(Events::UserCreated.new(user: self))
+</code></pre>
+
+<p>Our <code>Publishers::EventPublisher</code> will take the class and pull the event from the demodulized class name, converting the <code>UserCreated</code> bit to <code>:user_created</code>.</p>
+
+<p>Now we’re protected from accidentally misspelling an event.</p>
+
+<h2 id="bubbling-events-up-from-child-models">Bubbling events up from Child models</h2>
+
+<p>Let’s say our User model <code>has_many</code> Addresses. Can we get our <code>:user_updated</code> event to emit if the address is updated?</p>
+
+<p>Getting a callback to fire on the user whenever the address is updated is actually quite simple, but comes with a gotcha.</p>
+
+<p>ActiveRecord has a handy option that we can pass to <code>belongs_to</code> called <code>touch: true</code>.</p>
+
+<p>Enabling touch means that whenever our child model changes, we’ll bump the <code>updated_at</code> timestamp on our parent model.</p>
+
+<p>This is useful if you have a parent model where updates to the children should also be reflected in the parent, like a user profile where address is a separate model.</p>
+
+<p>But the gotcha here is that <code>touch</code> does NOT perform validations, and will only trigger <code>after_commit</code>, <code>after_touch</code>, and <code>after_rollback</code> callbacks.</p>
+
+<p>The best course of action is to use <code>belongs_to :thing, touch: true</code> on the child model, and then use <code>after_commit :do_something, on: [:create, :update]</code> on the parent model.</p>
+
+<p>Let’s update our code to log a message whenever our address is updated:</p>
+
+<pre><code class="language-ruby">class User &lt; ApplicationRecord
+	has_one :address
+
+	after_commit :broadcast_user_updated_event
+
+	private
+
+	def broadcast_user_updated_event
+		broadcast(Events::UserUpdated.new(user: self)
+	end
+end
+</code></pre>
+
+<pre><code class="language-ruby">class Address &lt; ApplicationRecord
+	belongs_to :user, touch: true
+end
+</code></pre>
+
+<p>Now our <code>:user_updated</code> event will also fire when our user’s address is updated!</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Wisper is a great library for de-spaghettifying events in your rails apps.</p>
+
+<p>It provides an easy to understand pattern for decoupling code and with a few additions like using classes for events, it can become a powerful event bus for your Rails apps.</p>
+
+  </article>
+
+  <div role="alert" class="mt-24 mb-12 alert alert-error alert-dash alert-vertical sm:alert-horizontal">
+  👍
+  <div>
+    <h3 class="font-bold">Thanks for reading</h3>
+    <p class="">You can follow me here for my latest thoughts and projects</p>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="https://github.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-github fa-xl"></i>
+    </a>
+
+    <a href="https://twitter.com/spencerldixon" target="_blank">
+      <i class="fa-brands fa-x-twitter fa-xl"></i>
+    </a>
+
+    <a href="https://linkedin.com/in/spencerldixon" target="_blank">
+      <i class="fa-brands fa-linkedin fa-xl"></i>
+    </a>
+
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')">
+      <i class="fa-solid fa-envelope fa-xl"></i>
+    </a>
+
+    <a href="http://localhost:4000/feed.xml">
+      <i class="fa-solid fa-rss fa-xl"></i>
+    </a>
+  </div>
+</div>
+
+
+
+
+</div>
+
+    </main>
+
+    <!-- Highlight.js core -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script>
+    // Auto-detect & highlight all <pre><code class="language-..."> blocks
+    document.addEventListener("DOMContentLoaded", (event) => {
+      if (window.hljs) { hljs.highlightAll(); }
+    });
+    </script>
+  </body>
+</html>
