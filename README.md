@@ -2,8 +2,12 @@
 
 Personal website and blog
 
-## Install
+## Development
 
 ```
+jekyll serve
 ```
 
+## Build
+
+`.github/workflows/jekyll.yml` will automatically build the project on commit to `main`

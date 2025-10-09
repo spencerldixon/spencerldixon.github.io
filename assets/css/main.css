@@ -8,3 +8,15 @@
 pre {
   padding: 0;
 }
+
+.prose > h1 {
+  @apply text-4xl font-normal tracking-tight py-2 text-primary
+}
+
+.prose > h2 {
+  @apply text-3xl font-normal tracking-tight py-2 text-primary
+}
+
+.prose > h3 {
+  @apply text-2xl font-normal tracking-tight py-2 text-primary
+}
