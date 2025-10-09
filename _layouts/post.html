@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="max-w-screen-md mx-auto mt-24">
+  <div class="flex flex-col gap-2 sm:mt-12 mb-12">
+    <h1 class="text-6xl text-primary tracking-tight mb-4">{{ page.title }}</h1>
+    <time class="">{{ page.date | date_to_string }}</time>
+  </div>
+
+  <article class="mx-auto prose lg:prose-xl text-base-content">
+    {{ content }}
+  </article>
+
+  {% include post_footer.html %}
+</div>

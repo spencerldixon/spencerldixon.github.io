@@ -4,8 +4,14 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed"
   gem 'jekyll-postcss-v2'
+  gem 'jekyll-paginate'
+  gem "jekyll-archives"
+  gem 'jekyll-compose', group: [:jekyll_plugins]
+  gem "jemoji"
+  gem "kramdown"
+  gem "rouge"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do

@@ -34,6 +34,14 @@ github_username:  spencerldixon
 plugins:
   - jekyll-feed
   - jekyll-postcss-v2
+  - jekyll-paginate
+  - jemoji
+  - jekyll-archives
+
+kramdown:
+  syntax_highlighter_opts: 
+    disable: true
+  input: GFM
 
 # Exclude from processing.
 # The following items will not be processed, by default.

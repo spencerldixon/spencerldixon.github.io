@@ -1,0 +1,14 @@
+{% if post.link %}
+<a href="{{ post.link }}" class="hover:bg-slate-200 py-2 px-4 rounded-xl flex">
+  {{ post.date | date_to_string }}
+  {{ post.title }}
+</a>
+{% else %}
+<a href="{{ post.url | prepend: site.baseurl }}" class="py-2 px-4 rounded-full flex grow-0 flex-wrap justify-between items-center gap-8 hover:bg-slate-200">
+  <p class="text-ellipsis overflow-hidden text-xl sm:text-2xl font-semibold">{{ post.title }}</p>
+
+  <div class="hidden sm:block">
+    {{ post.date | date_to_string }}
+  </div>
+</a>
+{% endif %}

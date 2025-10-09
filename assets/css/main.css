@@ -2,3 +2,9 @@
 ---
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+pre {
+  padding: 0;
+}
