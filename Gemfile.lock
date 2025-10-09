@@ -326,6 +326,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   http_parser.rb (~> 0.6.0)
+  jekyll
   jekyll-archives
   jekyll-compose
   jekyll-feed
