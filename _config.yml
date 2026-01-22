@@ -18,16 +18,27 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: spencer.wtf 
+title: spencer.wtf
+tagline: "I build tech products to solve hard problems"
 email: spencerlloyddixon@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: Spencer Dixon is a Senior Ruby and Python Developer with 11+ years of experience building software for UK Government Digital Services and global conservation efforts. Technical articles on ruby, python and software architecture.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://spencerldixon.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://spencer.wtf" # the base hostname & protocol for your site
 twitter_username: spencerldixon
-github_username:  spencerldixon
+github_username: spencerldixon
+author:
+  name: Spencer Dixon
+  twitter: spencerldixon
+  url: https://spencer.wtf
+logo: /assets/images/headshot.jpg
+og_image: /assets/images/og-default.svg
+social:
+  name: Spencer Dixon
+  links:
+    - https://twitter.com/spencerldixon
+    - https://github.com/spencerldixon
+    - https://linkedin.com/in/spencerldixon
+    - https://bsky.app/profile/spencerldixon.bsky.social
 
 # Build settings
 # theme: 
@@ -37,6 +48,8 @@ plugins:
   - jekyll-paginate
   - jemoji
   - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 kramdown:
   syntax_highlighter_opts: 

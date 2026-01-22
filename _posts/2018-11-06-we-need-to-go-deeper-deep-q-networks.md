@@ -2,12 +2,9 @@
 title: "We need to go deeper: Deep Q Networks"
 layout: post
 date: 2018-11-1 10:43
-image: '/assets/images/'
-description:
-tag:
+description: "Combine neural networks with Q-Learning to create Deep Q Networks (DQN). Learn how to approximate Q-values for large state spaces and overcome Q-table limitations."
+tags: [machine-learning, deep-learning, reinforcement-learning, dqn, python]
 blog: true
-jemoji:
-author:
 ---
 
 In the last post we looked at Q-Learning with respect to reinforcement learning; the idea that we can assess the quality of a particular state action pair and build up a cheat sheet that allows us to play the game proficiently.

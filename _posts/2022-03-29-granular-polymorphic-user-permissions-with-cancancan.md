@@ -2,12 +2,9 @@
 title: "Granular Polymorphic User Permissions with Cancancan"
 layout: post
 date: 2022-3-29 16:08
-image: '/assets/images/'
-description:
-tag: rails cancancan permissions authoriziation
+description: "Implement fine-grained polymorphic user permissions in Rails using Cancancan. Handle organization-level and item-specific access control with special permission grants."
+tags: [rails, cancancan, permissions, authorization]
 blog: true
-jemoji:
-author:
 ---
 
 I’ve recently been refactoring how user permissions work in a project to be more granular.

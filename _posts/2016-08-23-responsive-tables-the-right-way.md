@@ -2,12 +2,9 @@
 title: "Responsive tables the right way"
 layout: post
 date: 2016-08-23 14:29
-image: '/assets/images/'
-description:
-tag:
+description: "Make HTML tables mobile-friendly with CSS. Transform traditional table layouts into readable stacked cards on small screens using pure CSS media queries."
+tags: [css, responsive-design, html]
 blog: true
-jemoji:
-author:
 ---
 
 Tables are a really common way of displaying data, but have you tried looking at a table on your phone? It sucks.

@@ -2,12 +2,9 @@
 title: "Why accuracy isn't accurate"
 layout: post
 date: 2017-12-05 10:43
-image: '/assets/images/'
-description:
-tag:
+description: "Learn why accuracy can be a misleading metric for machine learning models. Understand precision, recall, F1 score, and when to use alternative evaluation metrics."
+tags: [machine-learning, metrics, data-science]
 blog: true
-jemoji:
-author:
 ---
 
 When it comes to measuring how well our machine learning models do, there's one metric we tend to reach for first; accuracy.

@@ -2,12 +2,9 @@
 title: "Deep Q-Learning for Atari Games"
 layout: post
 date: 2019-1-1 10:43
-image: '/assets/images/'
-description:
-tag: deeplearning qlearning
+description: "Build an AI agent that learns to play Space Invaders and other Atari games. Combine Deep Q-Networks with CNNs to learn directly from game screen pixels using OpenAI Gym."
+tags: [deep-learning, q-learning, reinforcement-learning, atari, python]
 blog: true
-jemoji:
-author:
 ---
 
 ![The worst game ever made](https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Etvideogamecover.jpg/220px-Etvideogamecover.jpg)

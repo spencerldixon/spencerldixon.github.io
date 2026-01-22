@@ -2,12 +2,9 @@
 title: "De-spaghettifying Rails Apps with Wisper"
 layout: post
 date: 2022-3-16 17:21
-image: '/assets/images/'
-description:
-tag: rails wisper
+description: "Learn how to use Wisper for pub/sub event-driven architecture in Rails. Clean up bloated controllers and models by decoupling business logic with the observer pattern."
+tags: [rails, wisper, architecture]
 blog: true
-jemoji:
-author:
 ---
 
 Let’s say we have a Rails application that users can sign up to, and we want to add a feature to send new users a welcome email on registration. Where should we put that logic?

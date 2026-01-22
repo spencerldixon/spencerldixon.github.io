@@ -2,12 +2,9 @@
 title: "Building a Neural Network with Tensorflow"
 layout: post
 date: 2017-11-07 10:43
-image: '/assets/images/'
-description:
-tag:
+description: "Build a neural network with TensorFlow to classify handwritten digits from the MNIST dataset. Step-by-step tutorial for image classification with deep learning."
+tags: [python, tensorflow, machine-learning, neural-networks]
 blog: true
-jemoji:
-author:
 ---
 
 In my last post we explored the nuts and bolts of how neural networks work by building a simplified neural net using nothing but numpy and Python.

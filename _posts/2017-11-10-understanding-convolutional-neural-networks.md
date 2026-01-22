@@ -2,12 +2,9 @@
 title: "Understanding Convolutional Neural Networks"
 layout: post
 date: 2017-11-10 10:43
-image: '/assets/images/'
-description:
-tag:
+description: "Learn how convolutional neural networks (CNNs) work and why they excel at image recognition. Build your own CNN with TensorFlow for improved handwriting classification."
+tags: [python, tensorflow, machine-learning, cnn, computer-vision]
 blog: true
-jemoji:
-author:
 ---
 
 In the past few posts, I've taken a dive into how neural networks work. We even built a neural net that could learn to recognise handwriting by breaking it down into a huge array of the pixels in the image, and representing the colour of the pixel as a value from 0-1.

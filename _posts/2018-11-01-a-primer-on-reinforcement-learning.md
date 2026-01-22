@@ -2,12 +2,9 @@
 title: "A Primer on Reinforcement Learning: Q-Learning"
 layout: post
 date: 2018-11-1 10:43
-image: '/assets/images/'
-description:
-tag:
+description: "Introduction to reinforcement learning and Q-Learning. Learn about states, actions, rewards, and the Bellman equation through building an AI that learns to play simple games."
+tags: [machine-learning, reinforcement-learning, q-learning, python]
 blog: true
-jemoji:
-author:
 ---
 
 Reinforcement Learning is a field of Machine Learning which aims to develop intelligences that learn through trial and error by exploring and interacting with their environment.

@@ -2,12 +2,9 @@
 title: "Neural Networks from Scratch"
 layout: post
 date: 2017-11-02 19:53
-image: '/assets/images/'
-description:
-tag:
+description: "Understand neural networks by building one from scratch in Python. Learn the mathematics behind neurons, weights, biases, and backpropagation with clear explanations."
+tags: [python, machine-learning, neural-networks]
 blog: true
-jemoji:
-author:
 ---
 
 In this post we'll take a dive into the maths behind neural networks and how they work by building our own neural network from scratch using Python.

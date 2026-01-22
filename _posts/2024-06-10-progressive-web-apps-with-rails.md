@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Progressive Web Apps with Rails
+description: "Learn how to convert your Rails application into a Progressive Web App (PWA) in 10-15 minutes. Covers manifest.json, service workers, and upcoming Rails 8 PWA defaults."
 date: 2024-06-10 10:54 +0100
 blog: true
+tags: [rails, pwa, mobile]
 ---
 Rails 8 will ship with the files necessary to make your application a Progressive Web App (PWA) by default.
 

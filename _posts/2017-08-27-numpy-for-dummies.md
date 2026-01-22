@@ -2,12 +2,9 @@
 title: "Numpy for dummies"
 layout: post
 date: 2017-08-27 16:53
-image: '/assets/images/'
-description:
-tag:
+description: "A beginner's guide to NumPy for data science and machine learning. Learn array operations, broadcasting, and vectorization that make Python powerful for numerical computing."
+tags: [python, numpy, machine-learning, data-science]
 blog: true
-jemoji:
-author:
 ---
 
 Python has made itself the default programming language for data science and machine learning. It's well documented, simple to use and fun to work with.

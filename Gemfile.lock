@@ -332,6 +332,8 @@ DEPENDENCIES
   jekyll-feed
   jekyll-paginate
   jekyll-postcss-v2
+  jekyll-seo-tag
+  jekyll-sitemap
   jemoji
   kramdown
   rouge
