@@ -3,20 +3,24 @@
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
+@import "basecoat-css";
 
 pre {
   padding: 0;
 }
 
+.prose {
+  @apply text-foreground 
+}
+
 .prose > h1 {
-  @apply text-4xl font-normal tracking-tight py-2 text-primary
+  @apply text-4xl font-normal tracking-tight py-2
 }
 
 .prose > h2 {
-  @apply text-3xl font-normal tracking-tight py-2 text-primary
+  @apply text-3xl font-normal tracking-tight py-2
 }
 
 .prose > h3 {
-  @apply text-2xl font-normal tracking-tight py-2 text-primary
+  @apply text-2xl font-normal tracking-tight py-2
 }
