@@ -2,6 +2,30 @@
 layout: default
 permalink: /archive
 title: Archive
+description: Browse all articles by Spencer Dixon on Ruby, Python, Rails, machine learning, neural networks, and software architecture.
 ---
 
+<div class="max-w-screen-md mx-auto mt-24">
+  <h1 class="text-4xl font-semibold tracking-tight mb-2">Archive</h1>
+  <p class="text-lg text-muted-foreground mb-12">All articles, organized by year</p>
 
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+  {% for year in posts_by_year %}
+  <section class="mb-12">
+    <h2 class="text-2xl font-semibold tracking-tight mb-6 text-pink-800">{{ year.name }}</h2>
+    <ul class="flex flex-col gap-4">
+      {% for post in year.items %}
+      <li>
+        <a href="{{ post.url | relative_url }}" class="card hover:shadow-lg transition-shadow">
+          <section class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <time class="badge shrink-0">{{ post.date | date: "%b %d" }}</time>
+            <span class="font-medium">{{ post.title }}</span>
+            </section>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
