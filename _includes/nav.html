@@ -1,6 +1,6 @@
 <div class="flex justify-between items-center w-full">
-  <a href="{{site.url}}{{site.baseurl}}" class="flex-1">
-    <img class="w-10 h-10 rounded-full" src="{{ site.baseurl }}/assets/images/headshot.jpg" />
+  <a href="{{site.url}}{{site.baseurl}}" class="flex-1" aria-label="Home">
+    <img class="w-10 h-10 rounded-full" src="{{ site.baseurl }}/assets/images/headshot.jpg" alt="Spencer Dixon" />
   </a>
 
   <div class="hidden sm:flex w-fit justify-center items-center button-group" role="group">
@@ -12,12 +12,11 @@
   </div>
 
   <div class="hidden sm:flex gap-4 flex-1 justify-end">
-    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" rel="nofollow">
+    <a href="javascript:window.location.href='mailto:' + atob('c3BlbmNlcmxsb3lkZGl4b25AZ21haWwuY29t')" rel="nofollow" aria-label="Email">
       <i class="fa-solid fa-envelope"></i>
     </a>
 
-
-    <a href="{{site.url}}{{site.baseurl}}/feed.xml">
+    <a href="{{site.url}}{{site.baseurl}}/feed.xml" aria-label="RSS Feed">
       <i class="fa-solid fa-rss"></i>
     </a>
   </div>
