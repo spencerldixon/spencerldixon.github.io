@@ -10,17 +10,17 @@ pre {
 }
 
 .prose {
-  @apply text-foreground 
+  @apply text-foreground
 }
 
 .prose > h1 {
-  @apply text-4xl font-normal tracking-tight py-2
+  @apply text-3xl font-semibold tracking-tight
 }
 
 .prose > h2 {
-  @apply text-3xl font-normal tracking-tight py-2
+  @apply text-2xl font-semibold tracking-tight
 }
 
 .prose > h3 {
-  @apply text-2xl font-normal tracking-tight py-2
+  @apply text-xl font-semibold tracking-tight
 }

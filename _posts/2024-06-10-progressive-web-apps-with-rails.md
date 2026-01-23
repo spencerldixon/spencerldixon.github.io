@@ -14,7 +14,7 @@ The good news is that converting your app to a PWA isn't hard. You can do it in 
 
 We can take a look at the [PR](https://github.com/rails/rails/pull/50528/files) for PWA default files in Rails 8 and take inspiration from this to make our Rails <8 apps PWA ready.
 
-# 1. Add the metatags to your layout
+## 1. Add the metatags to your layout
 
 ```html
 <head>
@@ -25,7 +25,7 @@ We can take a look at the [PR](https://github.com/rails/rails/pull/50528/files) 
 
 The MVP for a PWA is to serve a `manifest.json` at the root path of your project. This file contains the config for your PWA, details like the name that should be used for the app, the app icon, a description etc.
 
-# 2. Add a PWA controller to serve the manifest.json
+## 2. Add a PWA controller to serve the manifest.json
 
 ```ruby
 class PwaController < ApplicationController
@@ -41,7 +41,7 @@ end
 
 `service_worker.js` can be thought of as our bridge between our PWA mobile app and our web app. It's capable of doing things like intercepting requests and it's where we'd do things like offline mode should we wish to. It isn't strictly needed for transforming our Rails app into a very basic PWA, but we'll deliver an empty file for now so it's there to expand on later.
 
-# 3. Hook up the routes for the PWA controller
+## 3. Hook up the routes for the PWA controller
 
 In our `config/routes.rb`
 
@@ -50,7 +50,7 @@ get "/service-worker.js" => "pwa#service_worker"
 get "/manifest.json" => "pwa#manifest"
 ```
 
-# 4. Serve our default PWA files
+## 4. Serve our default PWA files
 
 Create a new directory at `app/views/pwa`
 
